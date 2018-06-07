@@ -38,9 +38,10 @@ public class AdminController {
                 //发送cookie
                 response.addCookie(cookie_username);
                 response.addCookie(cookie_password);
-                HttpSession session = request.getSession();
-                session.setAttribute("admin",result.getData());
             }
+            HttpSession session = request.getSession();
+            session.setAttribute("admin",result.getData());
+            System.out.println("zz:"+request.getSession().getAttribute("admin")==null);
             return "redirect:/admin/index";
         } else {
             model.addAttribute("result", result);

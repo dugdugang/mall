@@ -30,21 +30,10 @@
     <meta name="keywords" content="H-ui.admin v3.1,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
     <meta name="description" content="H-ui.admin v3.1，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
 
-    <script>
-        $(function () {
-
-            <%--if (${result.msg}!=null||${result.msg}!=""){--%>
-            alert(${result.msg});
-            //   }
-        })
-
-    </script>
 </head>
 <body>
 <input type="hidden" id="TenantId" name="TenantId" value=""/>
-<c:if test="${!empty admin}">
-<div>${admin.name}</div>
-</c:if>
+
 <div class="header"></div>
 <div class="loginWraper">
     <div id="loginform" class="loginBox">
