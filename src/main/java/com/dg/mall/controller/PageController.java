@@ -12,7 +12,6 @@ public class PageController {
     @RequestMapping("/admin")
     public String showAdmin( HttpServletRequest request){
         System.out.println(request.getSession().getAttribute("admin")==null);
-
         return "login";
     }
 

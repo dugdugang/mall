@@ -92,7 +92,7 @@
             <dt><i class="Hui-iconfont">&#xe616;</i> 商品管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a data-href="${pageContext.request.contextPath}/product_list" data-title="商品管理" href="javascript:void(0)">商品管理</a></li>
+                    <li><a data-href="${pageContext.request.contextPath}/products" data-title="商品管理" href="javascript:void(0)">商品管理</a></li>
                 </ul>
                 <ul>
                     <li><a data-href="article-list.html" data-title="商品分类" href="javascript:void(0)">商品分类</a></li>
@@ -247,13 +247,7 @@
         <li id="closeall">关闭全部</li>
     </ul>
 </div>
-<!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="../../../manager/lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="../../../manager/lib/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="../../../manager/static/h-ui/js/H-ui.min.js"></script>
-<script type="text/javascript" src="../../../manager/static/h-ui.admin/js/H-ui.admin.js"></script>
-<!--/_footer 作为公共模版分离出去-->
-
+<jsp:include page="footer.jsp"></jsp:include>
 <!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript" src="../../../manager/lib/jquery.contextmenu/jquery.contextmenu.r2.js"></script>
 <script type="text/javascript">

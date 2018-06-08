@@ -1,8 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dg.mall.mapper.ProductCustomMapper">
-    <select id="getProductCustoms" resultType="">
-SELECT a.id,a.sn,a.name,b.name as categroy_name ,a.market_price,a.price,a.score_count,a.is_top,a.create_date FROM product as a LEFT JOIN product_category as b ON a.product_category=b.id
-LIMIT 0,20;
-</select>
+    <resultMap id="resultMap" type="com.dg.mall.pojo.ProductCustom">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+        <result column="modify_date" jdbcType="TIMESTAMP" property="modifyDate" />
+        <result column="allocated_stock" jdbcType="INTEGER" property="allocatedStock" />
+        <result column="attribute_value0" jdbcType="VARCHAR" property="attributeValue0" />
+        <result column="attribute_value1" jdbcType="VARCHAR" property="attributeValue1" />
+        <result column="attribute_value10" jdbcType="VARCHAR" property="attributeValue10" />
+        <result column="attribute_value11" jdbcType="VARCHAR" property="attributeValue11" />
+        <result column="attribute_value12" jdbcType="VARCHAR" property="attributeValue12" />
+        <result column="attribute_value13" jdbcType="VARCHAR" property="attributeValue13" />
+        <result column="attribute_value14" jdbcType="VARCHAR" property="attributeValue14" />
+        <result column="attribute_value15" jdbcType="VARCHAR" property="attributeValue15" />
+        <result column="attribute_value16" jdbcType="VARCHAR" property="attributeValue16" />
+        <result column="attribute_value17" jdbcType="VARCHAR" property="attributeValue17" />
+        <result column="attribute_value18" jdbcType="VARCHAR" property="attributeValue18" />
+        <result column="attribute_value19" jdbcType="VARCHAR" property="attributeValue19" />
+        <result column="attribute_value2" jdbcType="VARCHAR" property="attributeValue2" />
+        <result column="attribute_value3" jdbcType="VARCHAR" property="attributeValue3" />
+        <result column="attribute_value4" jdbcType="VARCHAR" property="attributeValue4" />
+        <result column="attribute_value5" jdbcType="VARCHAR" property="attributeValue5" />
+        <result column="attribute_value6" jdbcType="VARCHAR" property="attributeValue6" />
+        <result column="attribute_value7" jdbcType="VARCHAR" property="attributeValue7" />
+        <result column="attribute_value8" jdbcType="VARCHAR" property="attributeValue8" />
+        <result column="attribute_value9" jdbcType="VARCHAR" property="attributeValue9" />
+        <result column="cost" jdbcType="DECIMAL" property="cost" />
+        <result column="full_name" jdbcType="VARCHAR" property="fullName" />
+        <result column="hits" jdbcType="BIGINT" property="hits" />
+        <result column="image" jdbcType="VARCHAR" property="image" />
+        <result column="is_gift" jdbcType="BIT" property="isGift" />
+        <result column="is_list" jdbcType="BIT" property="isList" />
+        <result column="is_marketable" jdbcType="BIT" property="isMarketable" />
+        <result column="is_top" jdbcType="BIT" property="isTop" />
+        <result column="keyword" jdbcType="VARCHAR" property="keyword" />
+        <result column="market_price" jdbcType="DECIMAL" property="marketPrice" />
+        <result column="memo" jdbcType="VARCHAR" property="memo" />
+        <result column="month_hits" jdbcType="BIGINT" property="monthHits" />
+        <result column="month_hits_date" jdbcType="TIMESTAMP" property="monthHitsDate" />
+        <result column="month_sales" jdbcType="BIGINT" property="monthSales" />
+        <result column="month_sales_date" jdbcType="TIMESTAMP" property="monthSalesDate" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="point" jdbcType="BIGINT" property="point" />
+        <result column="price" jdbcType="DECIMAL" property="price" />
+        <result column="sales" jdbcType="BIGINT" property="sales" />
+        <result column="score" jdbcType="REAL" property="score" />
+        <result column="score_count" jdbcType="BIGINT" property="scoreCount" />
+        <result column="seo_description" jdbcType="VARCHAR" property="seoDescription" />
+        <result column="seo_keywords" jdbcType="VARCHAR" property="seoKeywords" />
+        <result column="seo_title" jdbcType="VARCHAR" property="seoTitle" />
+        <result column="sn" jdbcType="VARCHAR" property="sn" />
+        <result column="stock" jdbcType="INTEGER" property="stock" />
+        <result column="stock_memo" jdbcType="VARCHAR" property="stockMemo" />
+        <result column="total_score" jdbcType="BIGINT" property="totalScore" />
+        <result column="unit" jdbcType="VARCHAR" property="unit" />
+        <result column="week_hits" jdbcType="BIGINT" property="weekHits" />
+        <result column="week_hits_date" jdbcType="TIMESTAMP" property="weekHitsDate" />
+        <result column="week_sales" jdbcType="BIGINT" property="weekSales" />
+        <result column="week_sales_date" jdbcType="TIMESTAMP" property="weekSalesDate" />
+        <result column="weight" jdbcType="INTEGER" property="weight" />
+        <result column="brand" jdbcType="BIGINT" property="brand" />
+        <result column="goods" jdbcType="BIGINT" property="goods" />
+        <result column="product_category" jdbcType="BIGINT" property="productCategory" />
+        <result column="categroy_name" jdbcType="VARCHAR" property="categoryName" />
+
+    </resultMap>
+    <select id="getProductCustoms" resultMap="resultMap">
+       SELECT a.id,a.sn,a.name,b.name as categroy_name ,a.market_price,a.price,a.score_count,a.is_top,a.create_date
+       FROM product as a LEFT JOIN product_category as b ON a.product_category=b.id
+    </select>
 </mapper>

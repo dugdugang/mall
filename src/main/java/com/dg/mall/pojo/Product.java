@@ -1,6 +1,7 @@
 package com.dg.mall.pojo;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Product {
@@ -607,6 +608,7 @@ public class Product {
      * @mbg.generated Thu Jun 07 14:36:17 GMT+08:00 2018
      */
     public void setCreateDate(Date createDate) {
+
         this.createDate = createDate;
     }
 
